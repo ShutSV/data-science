@@ -1,0 +1,16 @@
+exp3  python detect.py --weights "yolov5s.pt" --source "data/video.mov" --save-crop
+train  python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=5
+exp4 python detect.py --weights "runs/train/exp/weights/best_5.pt" --source "data/video.mov" --save-crop
+(прервано) train  python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=10 --quad --batch-size=32 --noval --workers=4 --cache="ram"
+(прервано) train  python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=10 --batch-size=32 --noval --workers=4 --cache="ram"
+(error cuda) train  python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=10 --batch-size=32 --noval --workers=4 --cache="ram" --device=0
+(прервано) train  python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=10 --batch-size=32 --noval --workers=4 --cache="ram"
+(error) train  python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=10 --batch-size=32 --noval --workers=4 --cache="ram"
+train  python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=10 --batch-size=32 --noval --cache="ram"
+exp9 python detect.py --weights "runs/train/exp9/weights/best_10.pt" --source "data/video.mov" --save-crop
+train python train.py --resume --weights "runs/train/exp9/weights/best_10.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=1 --batch-size=32 --noval --cache="ram"
+(error) exp python detect.py --weights "best_50.pt" --source "data/video.mov" --save-crop
+(error) train python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=10 --batch-size=64 --cache="ram"
+train python train.py --weights "yolov5s.pt" --data "data/kangaroo.yaml" --imgsz=640 --epochs=100 --batch-size=32 --cache="ram"
+exp18 python detect.py --weights "runs/train/exp11/weights/best_100.pt" --source "data/video.mov" --save-crop
+exp19 python detect.py --weights "runs/train/exp11/weights/best_100.pt" --source "data/validate_video.mov" --save-crop
